@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc vim"    # list of files/folders to symlink in homedir
+files="vimrc vim gitignore_global"    # list of files/folders to symlink in homedir
 
 ##########
 
@@ -32,3 +32,5 @@ done
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+
+git config --global core.excludesfile ~/.gitignore_global
