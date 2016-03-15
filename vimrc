@@ -14,7 +14,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Yggdroot/indentLine'
+Plugin 'majutsushi/tagbar'
 call vundle#end()
 
 let g:ctrlp_map = '<c-p>'
@@ -31,11 +31,16 @@ filetype plugin indent on
 
 autocmd FileType markdown setlocal colorcolumn= wrap  tw=120
 autocmd FileType slim setlocal colorcolumn=120
-autocmd BufEnter * lcd %:p:h
-au FocusLost * :wa
+
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set nornu
+  else
+    set rnu
+  endif
+endfunc
 
 let mapleader = ","
-
 set modelines=0
 set nowrap
 set tabstop=2 shiftwidth=2
@@ -64,6 +69,8 @@ set splitbelow
 set splitright
 
 nnoremap <leader><space> :noh<cr>
+nmap <F9> :call NumberToggle()<cr>
+nmap <F8> :TagbarToggle<CR>
 nnoremap <tab> %
 vnoremap <tab> %
 vnoremap <C-X> <Esc>`.``gvP``P
