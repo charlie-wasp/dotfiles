@@ -40,6 +40,24 @@ function! NumberToggle()
   endif
 endfunc
 
+function! ToggleComment()
+  let commentChars = {
+    \'coffee': '#',
+    \'php': '//',
+    \'ruby': '#',
+  \}
+
+  let commentChar = commentChars[&filetype]
+  let firstChar = getline('.')[0]
+
+  if firstChar == commentChar
+    normal ^"_x
+  else
+    execute 'normal I' . commentChar
+  endif
+
+endfunc
+
 let mapleader = ","
 set modelines=0
 set nowrap
@@ -90,6 +108,9 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap jj <ESC>
+inoremap <esc> <nop>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>sv :so$MYVIMRC<cr>
+nnoremap <c-_> :call ToggleComment()<cr>
 
 colorscheme wombat
