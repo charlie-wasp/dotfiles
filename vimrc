@@ -15,6 +15,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
 let g:ctrlp_map = '<c-p>'
@@ -23,14 +25,23 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 let g:indentLine_char = '|'
 let g:indentLine_enabled = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='dark'
 
 syntax enable
 set encoding=utf-8
 set showcmd
 filetype plugin indent on
 
+if executable('ag')
+    " Note we extract the column as well as the file and line number
+    set grepprg=ag\ --nogroup\ --nocolor\ --column
+    set grepformat=%f:%l:%c%m
+endif
+
 autocmd FileType markdown setlocal colorcolumn= wrap  tw=120
 autocmd FileType slim setlocal colorcolumn=120
+autocmd FileType coffee iabbrev <buffer> cl console.log
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -87,12 +98,16 @@ set splitbelow
 set splitright
 
 nnoremap <leader><space> :noh<cr>
+"Actually, it's Ctrl+/
+nnoremap <C-_> I#<Esc>
+nnoremap tk :tabn<cr>
+nnoremap tj :tabp<cr>
 nmap <F9> :call NumberToggle()<cr>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <tab> %
 vnoremap <tab> %
 vnoremap <C-X> <Esc>`.``gvP``P
-nmap <CR> o<Esc>
+nnoremap <CR> o<Esc>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
