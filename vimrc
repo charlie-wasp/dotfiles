@@ -17,6 +17,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-commentary'
 call vundle#end()
 
 let g:ctrlp_map = '<c-p>'
@@ -126,6 +127,7 @@ inoremap jj <ESC>
 inoremap <esc> <nop>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>sv :so$MYVIMRC<cr>
-nnoremap <c-_> :call ToggleComment()<cr>
+nnoremap <c-_> :Commentary<cr>
+vnoremap <c-_> :Commentary<cr>
 
 colorscheme wombat
