@@ -14,6 +14,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -76,7 +77,6 @@ set nowrap
 set tabstop=2 shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
-
 set scrolloff=3
 set autoindent
 set showmode
@@ -99,6 +99,8 @@ set splitbelow
 set splitright
 
 nnoremap <leader><space> :noh<cr>
+nnoremap <Leader>m :CtrlPModified<CR>
+nnoremap <Leader>M :CtrlPBranch<CR>
 "Actually, it's Ctrl+/
 nnoremap <C-_> I#<Esc>
 nnoremap tk :tabn<cr>
