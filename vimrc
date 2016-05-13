@@ -44,6 +44,7 @@ endif
 autocmd FileType markdown setlocal colorcolumn= wrap  tw=120
 autocmd FileType slim setlocal colorcolumn=120
 autocmd FileType coffee iabbrev <buffer> cl console.log
+autocmd FileType ruby iabbrev <buffer> dp puts 'TEST' * 100
 
 function! NumberToggle()
   if(&relativenumber == 1)
@@ -131,5 +132,6 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>sv :so$MYVIMRC<cr>
 nnoremap <c-_> :Commentary<cr>
 vnoremap <c-_> :Commentary<cr>
+nnoremap Y y$
 
 colorscheme wombat
