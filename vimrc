@@ -31,6 +31,7 @@ let g:indentLine_char = '|'
 let g:indentLine_enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
+let g:argwrap_tail_comma = 1
 
 syntax enable
 set encoding=utf-8
