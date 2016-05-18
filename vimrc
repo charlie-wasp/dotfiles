@@ -56,24 +56,6 @@ function! NumberToggle()
   endif
 endfunc
 
-function! ToggleComment()
-  let commentChars = {
-    \'coffee': '#',
-    \'php': '//',
-    \'ruby': '#',
-  \}
-
-  let commentChar = commentChars[&filetype]
-  let firstChar = getline('.')[0]
-
-  if firstChar == commentChar
-    normal ^"_x
-  else
-    execute 'normal I' . commentChar
-  endif
-
-endfunc
-
 let mapleader = ","
 set modelines=0
 set nowrap
@@ -104,8 +86,6 @@ set splitright
 nnoremap <leader><space> :noh<cr>
 nnoremap <Leader>m :CtrlPModified<CR>
 nnoremap <Leader>M :CtrlPBranch<CR>
-"Actually, it's Ctrl+/
-nnoremap <C-_> I#<Esc>
 nnoremap tk :tabn<cr>
 nnoremap tj :tabp<cr>
 nmap <F9> :call NumberToggle()<cr>
