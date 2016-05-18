@@ -48,14 +48,6 @@ autocmd FileType slim setlocal colorcolumn=120
 autocmd FileType coffee iabbrev <buffer> cl console.log
 autocmd FileType ruby iabbrev <buffer> dp puts 'TEST' * 100
 
-function! NumberToggle()
-  if(&relativenumber == 1)
-    set nornu
-  else
-    set rnu
-  endif
-endfunc
-
 let mapleader = ","
 set modelines=0
 set nowrap
@@ -69,7 +61,6 @@ set showcmd
 set cursorline
 set ttyfast
 set laststatus=2
-set relativenumber
 set undofile
 set ruler
 set hlsearch
@@ -88,7 +79,6 @@ nnoremap <Leader>m :CtrlPModified<CR>
 nnoremap <Leader>M :CtrlPBranch<CR>
 nnoremap tk :tabn<cr>
 nnoremap tj :tabp<cr>
-nmap <F9> :call NumberToggle()<cr>
 nmap <F8> :TagbarToggle<CR>
 nnoremap <tab> %
 vnoremap <tab> %
