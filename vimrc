@@ -19,6 +19,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-commentary'
+Plugin 'FooSoft/vim-argwrap'
+
 call vundle#end()
 
 let g:ctrlp_map = '<c-p>'
@@ -133,5 +135,6 @@ nnoremap <leader>sv :so$MYVIMRC<cr>
 nnoremap <c-_> :Commentary<cr>
 vnoremap <c-_> :Commentary<cr>
 nnoremap Y y$
+nnoremap <leader>a :ArgWrap<CR>
 
 colorscheme wombat
