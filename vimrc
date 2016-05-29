@@ -20,6 +20,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-commentary'
 Plugin 'FooSoft/vim-argwrap'
+Plugin 'powerman/vim-plugin-ruscmd'
 
 call vundle#end()
 
@@ -39,7 +40,6 @@ set showcmd
 filetype plugin indent on
 
 if executable('ag')
-    " Note we extract the column as well as the file and line number
     set grepprg=ag\ --nogroup\ --nocolor\ --column
     set grepformat=%f:%l:%c%m
 endif
@@ -100,6 +100,7 @@ inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 inoremap jj <ESC>
+inoremap оо <ESC>
 inoremap <esc> <nop>
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nnoremap <leader>sv :so$MYVIMRC<cr>
