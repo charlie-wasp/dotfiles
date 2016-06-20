@@ -1,6 +1,6 @@
 set nocompatible
-filetype off
 
+runtime macros/matchit.vim
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -22,6 +22,8 @@ Plugin 'tpope/vim-commentary'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'powerman/vim-plugin-ruscmd'
 Plugin 'wellle/targets.vim'
+Plugin 'kana/vim-textobj-user.git'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 call vundle#end()
 
@@ -38,7 +40,7 @@ let g:argwrap_tail_comma = 1
 syntax enable
 set encoding=utf-8
 set showcmd
-filetype plugin indent on
+filetype indent plugin on
 
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor\ --column
