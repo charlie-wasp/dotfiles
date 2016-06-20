@@ -21,6 +21,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-commentary'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'powerman/vim-plugin-ruscmd'
+Plugin 'wellle/targets.vim'
 
 call vundle#end()
 
