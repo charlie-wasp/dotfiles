@@ -24,6 +24,7 @@ Plugin 'powerman/vim-plugin-ruscmd'
 Plugin 'wellle/targets.vim'
 Plugin 'kana/vim-textobj-user.git'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'vim-scripts/ReplaceWithRegister'
 
 call vundle#end()
 
