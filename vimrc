@@ -22,9 +22,12 @@ Plugin 'tpope/vim-commentary'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'powerman/vim-plugin-ruscmd'
 Plugin 'wellle/targets.vim'
-Plugin 'kana/vim-textobj-user.git'
-Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+" Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/ReplaceWithRegister'
+Plugin 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-entire'
+Plugin 'kana/vim-textobj-line'
 
 call vundle#end()
 
@@ -51,6 +54,10 @@ endif
 autocmd FileType markdown setlocal colorcolumn= wrap  tw=120
 autocmd FileType slim setlocal colorcolumn=120
 autocmd FileType coffee iabbrev <buffer> cl console.log
+autocmd FileType javascript setlocal tabstop=4 shiftwidth=4
+autocmd FileType css setlocal tabstop=4 shiftwidth=4
+autocmd FileType php setlocal tabstop=4 shiftwidth=4
+autocmd FileType html setlocal tabstop=4 shiftwidth=4
 autocmd FileType ruby iabbrev <buffer> dp puts 'TEST' * 100
 
 let mapleader = ","
@@ -112,5 +119,6 @@ nnoremap <c-_> :Commentary<cr>
 vnoremap <c-_> :Commentary<cr>
 nnoremap Y y$
 nnoremap <leader>a :ArgWrap<CR>
+nmap <leader>sts ds'i:jj
 
 colorscheme wombat
