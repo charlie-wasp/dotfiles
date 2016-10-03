@@ -6,19 +6,20 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'tpope/vim-surround'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'slim-template/vim-slim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-commentary'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'powerman/vim-plugin-ruscmd'
 Plugin 'wellle/targets.vim'
@@ -28,6 +29,7 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-line'
+Plugin 'cohama/lexima.vim'
 
 call vundle#end()
 
