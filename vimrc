@@ -7,6 +7,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -24,20 +25,28 @@ Plugin 'FooSoft/vim-argwrap'
 Plugin 'powerman/vim-plugin-ruscmd'
 Plugin 'wellle/targets.vim'
 Plugin 'kana/vim-textobj-user'
-" Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'vim-scripts/ReplaceWithRegister'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-line'
-Plugin 'cohama/lexima.vim'
+Plugin 'mbr/vim-pyre'
+Plugin 'Yggdroot/indentLine'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'bkad/CamelCaseMotion'
+Plugin 'AndrewRadev/splitjoin.vim'
+"Snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
+
+call camelcasemotion#CreateMotionMappings('<leader>')
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:indentLine_char = '|'
+let g:indentLine_char = '┆'
 let g:indentLine_enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
@@ -48,10 +57,10 @@ set encoding=utf-8
 set showcmd
 filetype indent plugin on
 
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor\ --column
-    set grepformat=%f:%l:%c%m
-endif
+" if executable('ag')
+"     set grepprg=ag\ --nogroup\ --nocolor\ --column
+"     set grepformat=%f:%l:%c%m
+" endif
 
 autocmd FileType markdown setlocal colorcolumn= wrap  tw=120
 autocmd FileType slim setlocal colorcolumn=120
@@ -61,6 +70,10 @@ autocmd FileType css setlocal tabstop=4 shiftwidth=4
 autocmd FileType php setlocal tabstop=4 shiftwidth=4
 autocmd FileType html setlocal tabstop=4 shiftwidth=4
 autocmd FileType ruby iabbrev <buffer> dp puts 'TEST' * 100
+autocmd FileType ruby iabbrev <buffer> bb byebug
+iabbrev Copmany Company
+iabbrev copmany company
+iabbrev cmopany company
 
 let mapleader = ","
 set modelines=0
@@ -121,6 +134,10 @@ nnoremap <c-_> :Commentary<cr>
 vnoremap <c-_> :Commentary<cr>
 nnoremap Y y$
 nnoremap <leader>a :ArgWrap<CR>
+"'string' -> :string
 nmap <leader>sts ds'i:jj
+" :foo => bar -> foo: bar
+nnoremap <leader>h xf=dwhi:<esc>
+nnoremap gz :!zeal "<cword>"&<CR><CR>
 
 colorscheme wombat
