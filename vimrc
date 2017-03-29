@@ -37,6 +37,7 @@ Plugin 'AndrewRadev/splitjoin.vim'
 "Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 
