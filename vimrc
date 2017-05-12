@@ -39,6 +39,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'elixir-lang/vim-elixir'
 
+Plugin 'christoomey/vim-tmux-navigator'
+
 call vundle#end()
 
 call camelcasemotion#CreateMotionMappings('<leader>')
@@ -56,6 +58,8 @@ let g:argwrap_tail_comma = 1
 syntax enable
 set encoding=utf-8
 set showcmd
+set clipboard=unnamed
+
 filetype indent plugin on
 
 " if executable('ag')
@@ -112,10 +116,6 @@ nnoremap <tab> %
 vnoremap <tab> %
 vnoremap <C-X> <Esc>`.``gvP``P
 nnoremap <CR> o<Esc>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
