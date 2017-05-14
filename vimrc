@@ -6,16 +6,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'slim-template/vim-slim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'airblade/vim-gitgutter'
+
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
+
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jasoncodes/ctrlp-modified.vim'
 Plugin 'majutsushi/tagbar'
@@ -24,16 +24,20 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'FooSoft/vim-argwrap'
 Plugin 'powerman/vim-plugin-ruscmd'
 Plugin 'wellle/targets.vim'
-Plugin 'kana/vim-textobj-user'
 Plugin 'vim-scripts/ReplaceWithRegister'
+
+"Various textobjects
+Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-line'
-Plugin 'mbr/vim-pyre'
-Plugin 'Yggdroot/indentLine'
+
 Plugin 'terryma/vim-multiple-cursors'
+
 Plugin 'bkad/CamelCaseMotion'
+
 Plugin 'AndrewRadev/splitjoin.vim'
+
 "Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -42,6 +46,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'mileszs/ack.vim'
+Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end()
 
@@ -57,6 +62,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
 let g:argwrap_tail_comma = 1
 let g:ackprg = 'ag --vimgrep'
+let g:rspec_runner = "os_x_iterm2"
 
 syntax enable
 set encoding=utf-8
