@@ -40,6 +40,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'elixir-lang/vim-elixir'
 
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ngmy/vim-rubocop'
 
 call vundle#end()
 
