@@ -41,6 +41,7 @@ Plugin 'elixir-lang/vim-elixir'
 
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()
 
@@ -55,6 +56,7 @@ let g:indentLine_enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
 let g:argwrap_tail_comma = 1
+let g:ackprg = 'ag --vimgrep'
 
 syntax enable
 set encoding=utf-8
@@ -136,6 +138,8 @@ nnoremap <c-_> :Commentary<cr>
 vnoremap <c-_> :Commentary<cr>
 nnoremap Y y$
 nnoremap <leader>a :ArgWrap<CR>
+cnoreabbrev Ack Ack!
+nnoremap <leader>c :Ack!<Space>
 "'string' -> :string
 nmap <leader>sts ds'i:jj
 " :foo => bar -> foo: bar
