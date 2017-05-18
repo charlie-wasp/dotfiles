@@ -31,6 +31,7 @@ Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-indent'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-line'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 Plugin 'terryma/vim-multiple-cursors'
 
@@ -44,7 +45,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'elixir-lang/vim-elixir'
 
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ngmy/vim-rubocop'
+Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 Plugin 'thoughtbot/vim-rspec'
 
@@ -56,10 +57,12 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:indentLine_char = '┆'
-let g:indentLine_enabled = 0
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
+let g:airline#extensions#ale#warning_symbol = '⚠ '
+let g:airline#extensions#ale#error_symbol = 'x '
+
 let g:argwrap_tail_comma = 1
 let g:ackprg = 'ag --vimgrep'
 let g:rspec_runner = "os_x_iterm2"
@@ -151,5 +154,12 @@ nmap <leader>sts ds'i:jj
 " :foo => bar -> foo: bar
 nnoremap <leader>h xf=dwhi:<esc>
 nnoremap gz :!zeal "<cword>"&<CR><CR>
+nmap <silent> [w <Plug>(ale_previous_wrap)
+nmap <silent> ]w <Plug>(ale_next_wrap)
+
+map <leader>rc :call RunCurrentSpecFile()<cr>
+map <leader>rn :call RunNearestSpec()<cr>
+map <leader>rl :call RunLastSpec()<cr>
+map <leader>ra :call RunAllSpecs()<cr>
 
 colorscheme wombat
