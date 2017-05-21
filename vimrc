@@ -49,6 +49,10 @@ Plugin 'w0rp/ale'
 Plugin 'mileszs/ack.vim'
 Plugin 'thoughtbot/vim-rspec'
 
+Bundle 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-dispatch'
+
 call vundle#end()
 
 call camelcasemotion#CreateMotionMappings('<leader>')
@@ -59,13 +63,13 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='dark'
+let g:airline_theme='solarized'
 let g:airline#extensions#ale#warning_symbol = '⚠ '
 let g:airline#extensions#ale#error_symbol = 'x '
 
 let g:argwrap_tail_comma = 1
 let g:ackprg = 'ag --vimgrep'
-let g:rspec_runner = "os_x_iterm2"
+let g:rspec_command = "Dispatch rspec {spec}"
 
 syntax enable
 set encoding=utf-8
@@ -87,7 +91,7 @@ autocmd FileType css setlocal tabstop=4 shiftwidth=4
 autocmd FileType php setlocal tabstop=4 shiftwidth=4
 autocmd FileType html setlocal tabstop=4 shiftwidth=4
 autocmd FileType ruby iabbrev <buffer> dp puts 'TEST' * 100
-autocmd FileType ruby iabbrev <buffer> bb byebug
+autocmd FileType ruby iabbrev <buffer> bb binding.pry
 iabbrev Copmany Company
 iabbrev copmany company
 iabbrev cmopany company
@@ -162,4 +166,5 @@ map <leader>rn :call RunNearestSpec()<cr>
 map <leader>rl :call RunLastSpec()<cr>
 map <leader>ra :call RunAllSpecs()<cr>
 
-colorscheme wombat
+set background=dark
+colorscheme solarized
